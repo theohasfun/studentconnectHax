@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8;" /><meta http-equiv="Page-Exit" content="blendTrans(Duration=0.01)" /><title>
+	Timeout
+</title>
+	<link rel="Bookmark" href="/Production/StudentPortal/favicon.ico"/>
+	<link href="/Production/StudentPortal/Content/MainMaster.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/jquery.datepick.css?m=20211224110259" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Notifications.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/AppContent.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/jquery.treeTable.css?m=20211224110259" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/News.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Menu.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Site.css?m=20211224110258" rel="stylesheet" type="text/css" />
+    <link href="/Production/StudentPortal/Content/themes/base/jquery-ui.min.css?m=20211224110258" rel="stylesheet" type="text/css" />
+
+	<link href="/Production/StudentPortal/Content/Themes/Blue/MainMaster.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Themes/Blue/Site.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Themes/Blue/jquery.datepick.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Themes/Blue/Notifications.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Themes/Blue/AppContent.css?m=20211224110258" rel="stylesheet" type="text/css" />
+	
+    <script src="/Production/StudentPortal/Scripts/jquery-1.12.4.min-patched.js?m=20211111072932" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.datepick.js?m=20131201014010" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.blockUI.min.js?m=20130904060222" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.tablesorter.js?m=20190315024810" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.maskedinput.min.js?m=20150316122426" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/spell.js?m=20130329010738" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.timeout1.js?m=20130329010738" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.treetable.js?m=20130904065604" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.cookie.js?m=20150316122402" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.corner.js?m=20130904065438" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/Main.Master-1.0.0.js?m=20220721073859" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery-ui-1.11.3.min.js?m=20150316014424" type="text/javascript"></script>
+	
+	
+	
+	<style type="text/css">
+		html {overflow: auto;}
+		.ui-dialog {
+			z-index: 1000;
+		}
+	</style>
+</head>
+<body>
+	<div id="page" class="page">
+		<div id="main" style="width:100%; top:0px; bottom:0px; position:relative;">                    
+			
+<div style="margin-top:0px;">
+	<div align="center" style="margin-left:10px; width:100%;">
+		<br />
+		<h1><img src="/Production/StudentPortal/images/mainlogo.png" alt="Æquitas Solutions" height="150px" /></h1>
+		<br /><br /><br />
+	</div>
+	<div align="center" style="margin-left:10px; width:100%;">
+		<br /><br />
+		<h2>Your Session Has Timed Out</h2>
+		<br /><br />
+		We apologize, but your browser session has timed out. Please log back in to continue.
+		<br /><br /><br />
+	</div>
+</div>
+<table width="80%" align="center">
+	<tr>
+		<td align="center">
+			Click OK to Continue
+			<br /><br />
+			<input type="button" name="gotologinButton" id="gotologinButton" value="OK" />
+		</td>
+	</tr>
+</table>    
+<script type="text/javascript">
+	window.history.forward();
+	$(document).ready(function () {
+		$("#gotologinButton").on("click", function () {
+			window.location = '/Production/StudentPortal/';
+		});
+	});
+</script>
+
+		</div>
+	</div>
+    <div style="display:none;"> 
+        <img id="calImg" src="/Production/StudentPortal/images/calendar_16_16.png" alt="Popup" class="trigger"/> 
+    </div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+	    $.ajaxSetup({ cache: false });
+	    //Use dayNames to hold key dates (DONT USE long dayNames in Date Picker!!!!!!!!!!!!!!!!!!!!!)
+	    $.datepick.setDefaults({ dayNames: ['10/21/2023', '8/9/2023', '6/5/2024'] });
+	    $(".imageDatePicker").datepick({ showOnFocus: false, showTrigger: '#calImg' });
+	    //		$(".imageDatePicker").data("keyvalues", {
+	    //			valtoday: "10/21/2023",
+	    //			valboy: "8/9/2023",
+	    //			valeoy: "6/5/2024"
+	    //		});
+	});
+</script>
+</html>
