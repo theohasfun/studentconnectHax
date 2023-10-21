@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8" /><title>
+	Q ParentConnection
+</title><meta name="viewport" content="width=device-width" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/Production/StudentPortal/favicon/apple-touch-icon.png?v=XBze87Kjmz" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/Production/StudentPortal/favicon/favicon-32x32.png?v=XBze87Kjmz" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/Production/StudentPortal/favicon/favicon-16x16.png?v=XBze87Kjmz" />
+	<link rel="manifest" href="/Production/StudentPortal/favicon/site.webmanifest?v=XBze87Kjmz" />
+	<link rel="mask-icon" href="/Production/StudentPortal/favicon/safari-pinned-tab.svg?v=XBze87Kjmz" color="#5bbad5" />
+	<link rel="shortcut icon" href="/Production/StudentPortal/favicon/favicon.ico?v=XBze87Kjmz" />
+	<meta name="apple-mobile-web-app-title" content="Q SIS" /><meta name="application-name" content="Q SIS" /><meta name="msapplication-TileColor" content="#2b5797" /><meta name="theme-color" content="#ffffff" />
+
+	<script src="/Production/StudentPortal/Scripts/modernizr-1.7.min.js?m=20130329010738" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery-1.12.4.min-patched.js?m=20211111072932" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.timeout.Smart.js?m=20131209081100" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.tablesorter.js?m=20190315024810" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/jquery.form.min.js?m=20200527021304" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/Main.Master.Smart-1.0.0.js?m=20220721073859" type="text/javascript"></script>
+	<script src="/Production/StudentPortal/Scripts/fomantic.min.js?m=20220411115754" type="text/javascript"></script>
+	<link href="/Production/StudentPortal/Content/Fomantic/fomantic.min.css?m=20220411115754" rel="stylesheet" type="text/css" />
+	<link href="/Production/StudentPortal/Content/Site.Mobile.css?m=20220626092144" rel="stylesheet" type="text/css" />
+	</head>
+
+<body class="pushable">
+	<div id="leftPanel" class="ui sidebar vertical menu">
+		<div id="leftpaneldiv" class=""></div>  
+  </div>
+
+  <div id="leftPanel2" class="ui sidebar vertical menu">
+		<div id="leftpaneldiv2" class=""></div>  
+  </div>
+
+	<div class="pusher">
+		
+	<div id="menubar" class="ui inverted basic segment overlay" style="margin-bottom:5px; width:100%">
+    <div class="ui two column grid middle aligned">
+      <div class="column" style="padding-right:2px">
+        <a class="ui secondary button" style="padding:5px;" onclick="onClick_MyTracks();"><label for="mytracks" id="lblmytracks">My Tracks</label></a>
+      </div>
+      <div class="column ui right aligned" style="padding-left:2px">
+				<div id="hamburger" class="ui floating dropdown black small icon button" style="padding:5px;">
+					<a class="item" id="hamburger-link" style="color:white;"><i class="bars icon"></i></a>
+					<div class="menu">
+						
+						<a class="item" id="lnkMyAccount" href="/Production/StudentPortal/Home/Account"><label for="lnkMyAccount" id="lbllnkMyAccount">My Account</label></a>
+
+						<a class="item" id="lnkShowMessages" href="/Production/StudentPortal/Home/ShowPushMessages"><label for="lnkShowMessages" id="lbllnkShowMessages">Notifications</label></a>
+						<a class="item" id="btnclearpin" href="javascript:onClick_ClearDeviceKey()" style="display:none;"><label for="btnclearpin" id="lblbtnclearpin">Clear Device Key</label></a>
+						<a class="item" id="lnkSignOut" href="/Production/StudentPortal/Home/Logout"><label for="lnkSignOut" id="lbllnkSignOut">Sign Out</label></a>
+					</div>
+				</div>
+      </div>
+    </div>
+  </div>
+
+
+		<div id="main">
+			
+	<style type="text/css">
+		ul.UserLinkListLevel0 {
+			list-style-type: none;
+	 		padding-left: 0px;
+	 		font-size: .9em;
+		}
+		ul.UserLinkListLevel0 > li {
+	 		font-weight: bold;
+	 		padding-left: 0px;
+	 		padding-top: 10px;
+		}
+		ul.UserLinkListLevel1 {
+			list-style-type: none;
+	 		padding-left: 5px;
+	 		font-weight: normal;
+	 		font-size: .9em;
+		}
+		ul.UserLinkListLevel1 > li {
+			list-style-type: none;
+	 		padding-left: 5px;
+	 		padding-top: 5px;
+		}
+	</style>
+
+  <input id="hTrackID" name="hTrackID" type="hidden" value="1002824" />
+	<input id="hStudentID" name="hStudentID" type="hidden" value="426854" />
+
+
+  <div class="ui centered header" style="margin-top:5px">
+		<b>Woodrow Wilson MS (2024)</b>
+  </div>
+
+
+	<div id="areaList" class="ui centered raised card" style="width:95%">
+		<div class="content" style="padding-left:5px; padding-right:5px">
+			<div class="header">
+				<label for="selectinfo" id="lblselectinfo">Select Information</label>
+				<br />
+				<div id="debuginfo"></div>
+			</div>
+		</div>
+		<div class="content" style="padding-left:5px; padding-right:5px; padding-top:0px">
+
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_mobileStudentIdCard" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('mobileStudentIdCard','False');"><i class="dropdown icon"></i>Student Id Card</div>
+
+				</div>
+				<div id="area_mobileStudentIdCard" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Schedule" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Schedule','True');"><i class="dropdown icon"></i>Schedule</div>
+
+					<input type="hidden" id="bShowAllSchedule" value="0" />
+
+				</div>
+				<div id="area_Schedule" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Contacts" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Contacts','False');"><i class="dropdown icon"></i>Contacts</div>
+
+				</div>
+				<div id="area_Contacts" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Demographics" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Demographics','False');"><i class="dropdown icon"></i>Demographics</div>
+
+				</div>
+				<div id="area_Demographics" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_SPDynamic_422" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('SPDynamic_422','False');"><i class="dropdown icon"></i>Documents</div>
+
+				</div>
+				<div id="area_SPDynamic_422" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_GPA" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('GPA','True');"><i class="dropdown icon"></i>GPA</div>
+
+					<input type="hidden" id="bShowAllGPA" value="0" />
+
+				</div>
+				<div id="area_GPA" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_GradReq" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('GradReq','False');"><i class="dropdown icon"></i>Grad Rqmnts</div>
+
+				</div>
+				<div id="area_GradReq" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Transcript" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Transcript','True');"><i class="dropdown icon"></i>Transcript</div>
+
+					<input type="hidden" id="bShowAllTranscript" value="0" />
+
+				</div>
+				<div id="area_Transcript" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Tests" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Tests','True');"><i class="dropdown icon"></i>Testing</div>
+
+					<input type="hidden" id="bShowAllTests" value="0" />
+
+				</div>
+				<div id="area_Tests" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Assignments" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Assignments','True');"><i class="dropdown icon"></i>Assignments</div>
+
+					<input type="hidden" id="bShowAllAssignments" value="0" />
+
+				</div>
+				<div id="area_Assignments" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Attendance" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Attendance','True');"><i class="dropdown icon"></i>Attendance</div>
+
+					<input type="hidden" id="bShowAllAttendance" value="0" />
+
+				</div>
+				<div id="area_Attendance" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_Marks" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('Marks','False');"><i class="dropdown icon"></i>Marks</div>
+
+				</div>
+				<div id="area_Marks" class="content"></div>
+			</div>
+
+			<div class="ui vertical accordion" style="margin-top:2px;">
+				<div id="areakey_SchoolNews" class="title h4">
+					<div style="width:100%; color:#3366BB" onclick="selectArea('SchoolNews','False');"><i class="dropdown icon"></i>News</div>
+
+				</div>
+				<div id="area_SchoolNews" class="content"></div>
+			</div>
+
+			</div>
+		</div>
+
+
+	<div id="divProjectedGradRslt" class="ui top modal">
+		<i class="close icon"></i>
+		<div class="header">
+			<span style="font-size:.9em">Projected Graduation Result</span>
+		</div>
+		<div class="content">
+			Calculation based on posted transcript records, currently scheduled classes, and future course plan courses assuming qualifying marks
+		</div>
+		<div id="divProjectedGradRsltBody" class="scrolling content">
+			<div id="divBodyProjectedGradRslt" class="description" style="padding:4px"></div>
+		</div>
+		<div class="actions">
+			<div class="ui black fluid cancel button">Close</div>
+		</div>
+	</div>
+
+	<div id="DeviceKeyPopupDiv" class="ui long modal">
+		<i class="close icon"></i>
+		<div class="header">Device Key</div>
+		<div class="content">
+			<div class="description" style="padding:4px">
+				<h3>Turn off automatic login and reset your device key?</h3>
+				<p>This action cannot be undone!</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui red cancel button">No</div>
+			<div class="ui green ok button" id="deleteappkey">Yes</div>
+		</div>
+	</div>
+
+	<div id="popupDialog" class="ui modal">
+	  <i class="close icon"></i>
+	  <div class="header">Test Notification</div>
+	  <div class="content">
+		  <div id="TestNotifOk" class="description" style="padding:4px">
+				<h3 class="ui-title">A test notification has been sent to all of your registered devices.</h3>
+				<p>It may take several minutes for the notification to arrive.</p>
+		  </div>
+			<div id="TestNotifErr" class="description" style="padding:4px">
+				<h3 class="ui-title">The following error was encountered when attempting to send the test notification:</h3>
+				<p><label id="lblNotifErr"></label></p>
+		  </div>
+	  </div>
+	  <div class="actions">
+		  <button class="ui black fluid button" onclick="$('#popupDialog').modal('hide');">OK</button>
+	  </div>
+  </div>
+
+
+			<div id="div_AE_Alert" class="ui longer modal">
+				<i class="close icon"></i>
+				<div id="div_AE_AlertHeader" class="header">Alert</div>
+				<div class="content">
+					<div id="div_AE_AlertDetail" class="description" style="padding:4px"></div>
+				</div>
+				<div class="extra content">
+					<div class="ui black fluid button" onclick="onClick_CloseAE_Alert()">Ok</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+	<div id="sessionEndDialog" title="Dummy Div" style="display: none;"></div>
+
+
+
+	<script type="text/javascript"> //Stuff that MUST be initialized BEFORE JQM is loaded
+		$(document).ready(function () {
+			$('#sessionEndDialog').autologout('/Production/StudentPortal/Home/About', '/Production/StudentPortal/Home/Logout', '/Production/StudentPortal/Home/Timeout', {
+				sessionTimeout: Number('10'), sessionDialogWait: Number('0')
+			});
+		});
+
+		function isLocalStorageSupported() {
+			var testKey = 'test', storage = window.sessionStorage;
+			try {
+				storage.setItem(testKey, '1');
+				storage.removeItem(testKey);
+				return true;
+			}
+			catch (error) { return false; }
+		}
+
+		function AE_Alert(msg, fn) {
+			if (msg == '') { if (fn != null) fn(); }
+			else {
+				fn_onComplete = fn;
+				$('#div_AE_AlertDetail').html(msg);
+				$('#div_AE_Alert').modal('show');
+			}
+		}
+
+		function onClick_CloseAE_Alert() {
+			$('#div_AE_Alert').modal('hide');
+			if (fn_onComplete != null) fn_onComplete();
+		}
+
+		function appkeydefined() {
+			return ((window.localStorage["GUSDSPappkey"] != undefined) || (window.localStorage["GUSDSPSSOappkey"] != undefined))
+		}
+
+		function clearstorage() {
+			window.localStorage.removeItem("GUSDSPusername");
+			window.localStorage.removeItem("GUSDSPpassword");
+			window.localStorage.removeItem("GUSDSPremember");
+			window.localStorage.removeItem("GUSDSPappkey");
+		}
+
+		function resetHeight() { }
+
+		function openDocument(guid) {
+			var link = '/Production/StudentPortal/Document/LoadDocument/' + guid;
+			var html = '<div id="divStuDocLink" style="display:none;"><a id="AEopenDocLink" href="' + link + '?title=Student Document" target="_blank"></a></div>';
+			$('#main').append(html);
+			setTimeout(function () {
+				$('#AEopenDocLink')[0].click();
+				$('#divStuDocLink').remove();
+			}, 100);
+		}
+	</script>
+
+	
+<script type="text/javascript">
+	var _fbToken = '-1';
+
+	$(document).ready(function () {
+		$('#menubar').visibility({ type: 'fixed' });
+		$('#hamburger').dropdown({ action: 'hide' });
+		$('.ui.vertical.accordion').accordion();
+		resetHeight();
+
+		if (appkeydefined()) $("#btnclearpin").show();
+
+		$("#arealist").show();
+
+		$('#leftpaneldiv').load('/Production/StudentPortal/Home/LoadStuMobileList', function () {
+			if ($("#hTrackID").val() == "-1") {
+				if ($(".clsMyStudents").length == 1) {
+					var stuuniq = $(".clsMyStudents").first().attr('id').substring('stu'.length);
+					onClick_Student(stuuniq);
+				}
+				else $('#leftPanel').sidebar('toggle');
+			}
+		});
+
+		$("#deleteappkey").on("click", function () {
+			clearstorage();
+			$("#btnclearpin").hide();
+		});
+
+
+
+		if (isLocalStorageSupported() && '' == '1') {
+			window.localStorage["GUSDSPSSOremember"] = 1;
+			window.localStorage["GUSDSPSSOappkey"] = '';
+			window.localStorage["GUSDSPssokey"] = '';
+		}
+	});
+
+	$("#deleteappkey").on("tap", function () {
+		clearSSOStorage();
+		$("#btnclearpin").hide();
+	});
+
+	function onClick_Student(stuuniq) {
+		$("#hStudentID").val(stuuniq);
+		window.location = '/Production/StudentPortal/StudentBanner/SetStudentBanner/' + stuuniq;
+		$('#leftPanel').sidebar('toggle');
+		resetHeight();
+	}
+
+	function selectArea(area, useshowall) {
+		var showall = ($('#bShowAll' + area).val() === 'true');
+		if (area == 'SchoolLinks') $('#area_' + area).toggle();
+		else {
+			if ($('#area_' + area).is(':empty')) {
+				if (useshowall != 'True') showall = 0;
+				AjaxLoad($('#area_' + area), '/Production/StudentPortal/Home/LoadProfileData/' + area + '^' + showall);
+			}
+			else $('#area_' + area).empty();
+		}
+	}
+
+	function onClick_ShowAll(area) {
+		var bShowAll = !($('#bShowAll' + area).val() === 'true');
+		$('#bShowAll' + area).val(bShowAll);
+		AjaxLoad($('#area_' + area), '/Production/StudentPortal/Home/LoadProfileData/' + area + '^' + bShowAll);
+	}
+
+	function clearSSOStorage() {
+		window.localStorage.removeItem("GUSDSPSSOremember");
+		window.localStorage.removeItem("GUSDSPSSOappkey");
+		window.localStorage.removeItem("GUSDSPssokey");
+		clearstorage();
+	}
+
+	function onClick_ClearDeviceKey() {
+		$('#DeviceKeyPopupDiv').modal('show');
+	}
+
+	function LoadProjectedGradRslt() {
+		AjaxLoadData($("#divBodyProjectedGradRslt"), '/Production/StudentPortal/Home/LoadProjectedGradRslt/', {}, function () {
+			$('#divGradReqList').removeAttr('style');
+			$('#divProjectedGradRslt').modal('show');
+			$('.scrolling.content').css('max-height', (screen.height - 350) + 'px');
+			$('.ui.dimmer.modals.page.transition.visible.active').removeAttr('style');
+		});
+	}
+
+	function LoadCoursePlanEdit() {
+		var areaname = "";
+		$("a:contains('Course Plan')").each(function () {
+			if ($(this).text() == 'Course Plan') {
+				areaname = $(this).parents('.title.active').attr('id').substring('areakey_'.length);
+				return false;
+			}
+		});
+
+		window.location = '/Production/StudentPortal/Home/LoadCoursePlanEdit/' + areaname;
+	}
+
+	function PrintCoursePlanReport() {
+		var sprops = "resizable=yes,width=800,height=600,top=1,left=1,scrollbars=yes";
+		window.open('/Production/StudentPortal/Home/PrintCoursePlanReport', "Report", sprops);
+	}
+
+	function disableHeaderLinkOnDynamicSection() {
+		if ($('#tblCoursePlanHeader').length > 0 && $('#tblCoursePlanHeader').parent().parent().find('#lblnodata').length > 0) $('#anchPrintCoursePlanReport').hide();
+	}
+
+	function onClick_TestPushNotification() {
+		if (_fbToken == '-1') {
+			if (typeof invokeCSharpAction === 'function')
+				invokeCSharpAction("GetFirebaseToken");						// this javascript function is injected by the Q Mobile App to allow us to run c# functions in the mobile app - in this case performing SSO
+		}
+		else testNotification();
+	}
+
+	function callbackGetFirebaseToken(deviceInfo) {					// when invokeCSharpAction("GetFirebaseToken") is finished, this is the callback
+		_deviceInfo = deviceInfo;
+		var parms = deviceInfo.split('^AE_SPLIT2^');
+		_fbToken = parms[0];
+
+		if (_fbToken == '-1') invokeCSharpAction("GetFirebaseError");
+		else testNotification();
+	}
+
+	function callbackGetFirebaseError(errmsg) {					// when invokeCSharpAction("GetFirebaseError") is finished, this is the callback
+		showFirebaseError(errmsg);
+	}
+
+	function testNotification() {
+		$.post('/Production/StudentPortal/Home/UpdateFirebaseToken', { id: _deviceInfo}, function (retval) {			// post the firebase token to Q
+		if (retval.errmsg != '') {
+			showFirebaseError(retval.errmsg);
+		}
+		else SendPushNotification();
+	});
+}
+
+	function SendPushNotification() {
+		$.post('/Production/StudentPortal/Home/SendPushNotification', {}, function (retval) {
+			if (retval.errmsg == '') showFirebaseWait();
+			else showFirebaseError(retval.errmsg);
+		});
+	}
+
+	function showFirebaseError(errmsg) {
+		$('#TestNotifOk').hide();
+		$('#lblNotifErr').text(errmsg);
+		$('#TestNotifErr').show();
+		$('#popupDialog').modal('show');
+	}
+
+	function showFirebaseWait() {
+		$('#TestNotifErr').hide();
+		$('#TestNotifOk').show();
+		$('#popupDialog').modal('show');
+	}
+
+	function openStuProfileDynamicDocument(guid, area) {
+		$.post('/Production/StudentPortal/Home/UpdateAreaToOpen', { id: area }, function (retval) {
+				openDocument(guid);
+		});
+	}
+
+	function onClick_MyTracks() {
+		$.post('/Production/StudentPortal/Home/UpdateAreaToOpen', { id: "" }, function (retval) { });
+		$('#leftPanel').sidebar('toggle');
+	}
+</script>
+
+</body>
+</html>
